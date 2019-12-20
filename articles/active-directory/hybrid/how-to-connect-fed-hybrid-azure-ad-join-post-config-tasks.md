@@ -23,18 +23,12 @@ ms.collection: M365-identity-device-management
 
 After you have run Azure AD Connect to configure your organization for Hybrid Azure AD join, there are a few additional steps that you must complete to finalize that setup.  Carry out only the steps that apply for your devices.
 
-## 1. Configure controlled rollout (Optional)
-All domain-joined devices running Windows 10 and Windows Server 2016 automatically register with Azure AD once all configuration steps are complete. If you prefer a controlled rollout rather than this auto-registration, you can use group policy to selectively enable or disable automatic rollout.  This group policy should be set before starting the other configuration steps:
-* Create a group policy object in your Active Directory.
-* Name it (ex- Hybrid Azure AD join).
-* Edit and go to:  Computer Configuration > Policies > Administrative Templates > Windows Components > Device Registration.
+## 1. Configure Controlled Validation of hybrid Azure AD Join (Optional)
+When all of the pre-requisites are in place, Windows devices will automatically register as devices in your Azure AD tenant. The state of these device identities in Azure AD is referred as hybrid Azure AD join. More information about the concepts covered in this article can be found in the articles [Introduction to device management in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/devices/overview) and [Plan your hybrid Azure Active Directory join implementation](https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-plan).
 
->[!NOTE]
->For 2012R2 the policy settings are at **Computer Configuration > Policies > Administrative Templates > Windows Components > Workplace Join > Automatically workplace join client computers**
+Organizations may want to do a controlled validation of hybrid Azure AD join before enabling it across their entire organization all at once. 
 
-* Enable this setting:  Register domain-joined computers as devices.
-* Apply and click OK.
-* Link the GPO to the location of your choice (organizational unit, security group, or to the domain for all devices).
+See: [Controlled Validation of HybridAzure AD Join](https://docs.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-control) for more details.
 
 ## 2. Configure network with device registration endpoints
 Make sure that the following URLs are accessible from computers inside your organizational network for registration to Azure AD:
@@ -96,3 +90,4 @@ This installer creates a scheduled task on the device system that runs in the us
 
 ## Next steps
 [Configure device writeback](how-to-connect-device-writeback.md)
+[How To:Manage stale devices in Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/devices/manage-stale-devices)
