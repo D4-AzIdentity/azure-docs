@@ -200,6 +200,7 @@ If you experience issues with completing hybrid Azure AD join for domain-joined 
 ## Next steps
 
 Learn how to [manage device identities by using the Azure portal](device-management-azure-portal.md).
+[Post-Join Configuration Tasks for Hybid Azure AD Join](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-hybrid-azure-ad-join-post-config-tasks)
 
 <!--Image references-->
 [1]: ./media/active-directory-conditional-access-automatic-device-registration-setup/12.png
